@@ -8,7 +8,7 @@ public class MainUII18nConstants {
             "log.main_ui.new_connection";
     
     public static final String LOG_REFRESH_CONNECTION = 
-        "log.main_ui.refresh_connection";
+            "log.main_ui.connection_refreshed";
     
     private MainUII18nConstants() {
         // no instanciable
