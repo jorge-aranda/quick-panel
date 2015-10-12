@@ -1,7 +1,6 @@
 
 package es.jaranda.quick.panel.web.window;
 
-import com.vaadin.shared.ui.window.WindowMode;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Window;

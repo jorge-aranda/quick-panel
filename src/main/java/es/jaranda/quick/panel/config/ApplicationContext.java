@@ -1,6 +1,7 @@
 
 package es.jaranda.quick.panel.config;
 
+import com.vaadin.spring.annotation.EnableVaadin;
 import static es.jaranda.quick.panel.constants.ConfigurationConstants.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -11,6 +12,7 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 
 @SpringBootApplication
 @EnableAutoConfiguration
+@EnableVaadin
 @ComponentScan(PROP_COMPONENT_SCAN_PACKAGES)
 public class ApplicationContext {
 
