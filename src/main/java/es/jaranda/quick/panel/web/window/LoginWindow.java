@@ -1,10 +1,11 @@
 
 package es.jaranda.quick.panel.web.window;
 
+import com.vaadin.shared.ui.window.WindowMode;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Window;
-import es.jaranda.quick.panel.config.I18nHelper;
+import es.jaranda.quick.panel.web.util.I18nHelper;
 import static es.jaranda.quick.panel.constants.i18n.DemoI18nConstants.*;
 import static es.jaranda.quick.panel.constants.i18n.LoginI18nConstants.*;
 import es.jaranda.quick.panel.web.utils.NotificationUtils;
@@ -17,6 +18,9 @@ import org.springframework.context.annotation.Scope;
 @Scope(SCOPE_PROTOTYPE)
 public class LoginWindow extends Window {
 
+    private static final String WIDTH_SIZE = "90%";
+    private static final String HEIGHT_SIZE = "90%";
+    
     private final I18nHelper i18n;
     
     @Autowired
@@ -26,7 +30,8 @@ public class LoginWindow extends Window {
         this.i18n = i18n;
         
         setUp();
-        
+
+        // XXX remove demo
         /* DEMO */
         prepareDemo();
     }
@@ -36,15 +41,16 @@ public class LoginWindow extends Window {
         this.setResizable(true);
         this.setClosable(false);
         this.setResponsive(true);
-        
-        this.setWidth("90%");
-        this.setHeight("90%");
+
+        this.setWidth(WIDTH_SIZE);
+        this.setHeight(HEIGHT_SIZE);
     }
     
     private String getMessage(String code) {
         return i18n.getMessage(code);
     }
     
+    // XXX remove demo
     /* DEMO -> to remove */
     
     private void prepareDemo() {

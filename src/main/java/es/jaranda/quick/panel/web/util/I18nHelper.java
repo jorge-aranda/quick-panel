@@ -1,5 +1,5 @@
 
-package es.jaranda.quick.panel.config;
+package es.jaranda.quick.panel.web.util;
 
 import com.vaadin.server.VaadinSession;
 import com.vaadin.spring.annotation.SpringComponent;

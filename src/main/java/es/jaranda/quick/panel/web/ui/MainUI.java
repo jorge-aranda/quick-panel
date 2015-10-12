@@ -8,6 +8,10 @@ import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.UI;
 import static es.jaranda.quick.panel.constants.ConfigurationConstants.*;
 import static es.jaranda.quick.panel.constants.StylesConstants.*;
+import es.jaranda.quick.panel.constants.i18n.MainUII18nConstants;
+import es.jaranda.quick.panel.constants.i18n.PageI18nConstants;
+import es.jaranda.quick.panel.utils.I18nServerUtils;
+import es.jaranda.quick.panel.web.util.I18nHelper;
 import es.jaranda.quick.panel.web.window.LoginWindow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +24,8 @@ public class MainUI extends UI {
 
     private static final Logger LOG = LoggerFactory.getLogger(MainUI.class);
     
-//    @Autowired
-//    private I18nHelper i18n;
+    @Autowired
+    private I18nHelper i18n;
     
     @Autowired
     private LoginWindow loginWindow;
@@ -30,9 +34,12 @@ public class MainUI extends UI {
     protected void init(VaadinRequest request) {
         reportIntoLogNewConnection(request.getWrappedSession().getId());
         
+        /* Set navigation properties */
+//        this.getPage().setUriFragment(???);
+        this.getPage().setTitle(i18n.getMessage(PageI18nConstants.TITLE));
+        
         // Let's go!
         addWindow(loginWindow);
-        
         
     }
     
@@ -44,16 +51,14 @@ public class MainUI extends UI {
     private void reportIntoLogNewConnection(String id) {
         String address = getPage().getWebBrowser().getAddress();
         
-        // TODO toI18n
-        LOG.info("New connection detected from: " + address + " with ID: " + 
-                id);
+        LOG.info(I18nServerUtils.getMessage(
+                MainUII18nConstants.LOG_NEW_CONNECTION, address, id));
     }
 
     private void reportIntoLogBrowserRefresh(String id) {
         String address = getPage().getWebBrowser().getAddress();
         
-        // TODO toI18n
-        LOG.info("The host: " + address + " with ID: " + 
-                id + " has done a refresh");
+        LOG.info(I18nServerUtils.getMessage(
+                MainUII18nConstants.LOG_REFRESH_CONNECTION, address, id));
     }
 }

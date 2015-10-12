@@ -14,6 +14,11 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 @ComponentScan(PROP_COMPONENT_SCAN_PACKAGES)
 public class ApplicationContext {
 
+    /**
+     * This bean provides support for i18n
+     * @param i18nResources Path into classpath of 18n resources
+     * @return Bean to provide support for i18n
+     */
     @Bean
     ResourceBundleMessageSource messageSource(
             @Value(PROP_I18N_RESOURCES) String i18nResources
