@@ -3,10 +3,14 @@ package es.jaranda.quick.panel.constants;
 
 public class ConfigurationConstants {
 
-    public static final String MAIN_UI_PATH = "";
+    /* PROPERTIES */
+    public static final String PROP_I18N_RESOURCES = "${app.i18nResources}";
+
+    public static final String PROP_COMPONENT_SCAN_PACKAGES = 
+            "${app.componentScanPackages}";
     
-    public static final String COMPONENT_SCAN_PACKAGES = 
-            "es.jaranda.quick.panel";
+    /* STATIC CONFIG */
+        public static final String MAIN_UI_PATH = "";
     
     private ConfigurationConstants() {
         // no instances
